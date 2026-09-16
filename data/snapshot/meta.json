@@ -1,0 +1,597 @@
+{
+  "fetchedAt": "2026-09-16T10:03:17.525Z",
+  "fetchedAtMs": 1789552997525,
+  "seconds": 93.1,
+  "requests": 29,
+  "source": "HM Revenue & Customs, uktradeinfo",
+  "sourceUrl": "https://www.uktradeinfo.com/",
+  "apiUrl": "https://api.uktradeinfo.com",
+  "licence": "Open Government Licence v3.0",
+  "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "months": [
+    "2024-08",
+    "2024-09",
+    "2024-10",
+    "2024-11",
+    "2024-12",
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07"
+  ],
+  "newest": "2026-07",
+  "rows": 123865,
+  "partners": [
+    {
+      "id": 400,
+      "name": "United States",
+      "code": "US",
+      "region": "North America",
+      "total": 277264345964
+    },
+    {
+      "id": 4,
+      "name": "Germany",
+      "code": "DE",
+      "region": "European Union",
+      "total": 219982709604
+    },
+    {
+      "id": 720,
+      "name": "China",
+      "code": "CN",
+      "region": "Asia and Oceania",
+      "total": 202550138302
+    },
+    {
+      "id": 3,
+      "name": "Netherlands",
+      "code": "NL",
+      "region": "European Union",
+      "total": 152773193175
+    },
+    {
+      "id": 39,
+      "name": "Switzerland",
+      "code": "CH",
+      "region": "Western Europe exc EU",
+      "total": 127475678771
+    },
+    {
+      "id": 1,
+      "name": "France",
+      "code": "FR",
+      "region": "European Union",
+      "total": 119716202064
+    },
+    {
+      "id": 17,
+      "name": "Belgium",
+      "code": "BE",
+      "region": "European Union",
+      "total": 92986505430
+    },
+    {
+      "id": 7,
+      "name": "Ireland",
+      "code": "IE",
+      "region": "European Union",
+      "total": 86796309973
+    },
+    {
+      "id": 404,
+      "name": "Canada",
+      "code": "CA",
+      "region": "North America",
+      "total": 73908750297
+    },
+    {
+      "id": 11,
+      "name": "Spain",
+      "code": "ES",
+      "region": "European Union",
+      "total": 66548481788
+    },
+    {
+      "id": 5,
+      "name": "Italy",
+      "code": "IT",
+      "region": "European Union",
+      "total": 64047744762
+    },
+    {
+      "id": 28,
+      "name": "Norway",
+      "code": "NO",
+      "region": "Western Europe exc EU",
+      "total": 54996498683
+    },
+    {
+      "id": 740,
+      "name": "Hong Kong",
+      "code": "HK",
+      "region": "Asia and Oceania",
+      "total": 48697059855
+    },
+    {
+      "id": 60,
+      "name": "Poland",
+      "code": "PL",
+      "region": "European Union",
+      "total": 44304010460
+    },
+    {
+      "id": 52,
+      "name": "Turkey",
+      "code": "TR",
+      "region": "Western Europe exc EU",
+      "total": 38713238235
+    },
+    {
+      "id": 664,
+      "name": "India",
+      "code": "IN",
+      "region": "Asia and Oceania",
+      "total": 37316816003
+    },
+    {
+      "id": 732,
+      "name": "Japan",
+      "code": "JP",
+      "region": "Asia and Oceania",
+      "total": 32464206612
+    },
+    {
+      "id": 388,
+      "name": "South Africa",
+      "code": "ZA",
+      "region": "Sub-Saharan Africa",
+      "total": 30397784752
+    },
+    {
+      "id": 30,
+      "name": "Sweden",
+      "code": "SE",
+      "region": "European Union",
+      "total": 25735568352
+    },
+    {
+      "id": 647,
+      "name": "UAE",
+      "code": "AE",
+      "region": "Middle East and N Africa",
+      "total": 25035211934
+    },
+    {
+      "id": 706,
+      "name": "Singapore",
+      "code": "SG",
+      "region": "Asia and Oceania",
+      "total": 24772200525
+    },
+    {
+      "id": 800,
+      "name": "Australia",
+      "code": "AU",
+      "region": "Asia and Oceania",
+      "total": 24483826705
+    },
+    {
+      "id": 728,
+      "name": "South Korea",
+      "code": "KR",
+      "region": "Asia and Oceania",
+      "total": 19100559465
+    },
+    {
+      "id": 8,
+      "name": "Denmark",
+      "code": "DK",
+      "region": "European Union",
+      "total": 18626060381
+    },
+    {
+      "id": 690,
+      "name": "Vietnam",
+      "code": "VN",
+      "region": "Asia and Oceania",
+      "total": 16886133359
+    },
+    {
+      "id": 61,
+      "name": "Czechia",
+      "code": "CZ",
+      "region": "European Union",
+      "total": 15067371656
+    },
+    {
+      "id": 508,
+      "name": "Brazil",
+      "code": "BR",
+      "region": "Latin America and Caribbean",
+      "total": 12988345804
+    },
+    {
+      "id": 632,
+      "name": "Saudi Arabia",
+      "code": "SA",
+      "region": "Middle East and N Africa",
+      "total": 12951483347
+    },
+    {
+      "id": 38,
+      "name": "Austria",
+      "code": "AT",
+      "region": "European Union",
+      "total": 12863294592
+    },
+    {
+      "id": 81,
+      "name": "Uzbekistan",
+      "code": "UZ",
+      "region": "Eastern Europe exc EU",
+      "total": 11895261705
+    }
+  ],
+  "chapters": {
+    "10": "Cereals",
+    "11": "Products of the milling industry; malt; starches; inulin; wheat gluten",
+    "12": "Oil seeds and oleaginous fruits; miscellaneous grains, seeds and fruit; industrial or medical plants; straw and fodder",
+    "13": "Lacs; gums, resins and other vegetable saps and extracts",
+    "14": "Vegetable plaiting materials; vegetable products not elsewhere specified or included",
+    "15": "Animal or vegetable fats and oils and their cleavage products; prepared edible fats; animal or vegetable waxes",
+    "16": "Preparations of meat, fish or crustaceans, molluscs or other aquatic invertebrates",
+    "17": "Sugars and sugar confectionery",
+    "18": "Cocoa and cocoa preparations",
+    "19": "Preparations of cereals, flour, starch or milk; pastrycooks' products",
+    "20": "Preparations of vegetables, fruit, nuts or other parts of plants",
+    "21": "Miscellaneous edible preparations",
+    "22": "Beverages, spirits and vinegar",
+    "23": "Residues and waste from the food industries; prepared animal fodder",
+    "24": "Tobacco and manufactured tobacco substitutes",
+    "25": "Salt; sulphur; earths and stone; plastering material, lime and cement",
+    "26": "Ores, slag and ash",
+    "27": "Mineral fuels, mineral oils and products of their distillation; bituminous substances; mineral waxes",
+    "28": "Inorganic chemicals: organic or inorganic compounds of precious metals, of rare-earth metals, of radioactive elements or of isotopes",
+    "29": "Organic chemicals",
+    "30": "Pharmaceutical products",
+    "31": "Fertilizers",
+    "32": "Tanning or dyeing extracts; tannins and their derivatives; dyes, pigments and other colouring matter;paints and varnishes; putty and other mastics; inks",
+    "33": "Essential oils and resinoids; perfumery, cosmetic or toilet preparations",
+    "34": "Soaps, organic surface-active agents, washing preparations, lubricating preparations,artificial waxes, prepared waxes, shoe polish, scouring powder and the like, candles and similar products, modelling pastes, dentalwax and plaster-based dental prepa",
+    "35": "Albuminous substances; modified starches; glues; enzymes",
+    "36": "Explosives; pyrotechnic products; matches;pyrophoric alloys; combustible materials",
+    "37": "Photographic or cinematographic products",
+    "38": "Miscellaneous chemical products",
+    "39": "Plastics and plastic products",
+    "40": "Rubber and articles thereof",
+    "41": "Hides and skins (other than furskins) and leather",
+    "42": "Articles of leather; saddlery and harness; travel goods, handbags and similar containers; articles of animal gut (other than silk-worm gut)",
+    "43": "Furskins and artificial fur; articles thereof",
+    "44": "Wood and articles of wood; wood charcoal",
+    "45": "Cork and articles of cork",
+    "46": "Wickerwork and basketwork",
+    "47": "Pulp of wood or of other fibrous cellulosic material; waste and scrap of paper or paperboard",
+    "48": "Paper and paperboard; articles of paper pulp, paper or paperboard",
+    "49": "Books, newspapers, pictures and other products of the printing industry; manuscripts, typescripts and plans",
+    "50": "Silk",
+    "51": "Wool, fine and coarse animal hair; yarn and fabrics of horsehair",
+    "52": "Cotton",
+    "53": "Other vegetable textile fibres; paper yarnand woven fabrics of paper yarn",
+    "54": "Man-made filaments",
+    "55": "Man-made staple fibres",
+    "56": "Wadding, felt and nonwovens; special yarns; twine, cordage, rope and cable and articles thereof",
+    "57": "Carpets and other textile floor coverings",
+    "58": "Special woven fabrics; tufted textile products; lace; tapestries; trimmings; embroidery",
+    "59": "Impregnated, coated, covered or laminated textile fabrics; articles for technical use, of textile materials",
+    "60": "Knitted or crocheted fabrics",
+    "61": "Articles of apparel and clothing accessories, knitted or crocheted",
+    "62": "Articles of apparel and clothing accessories, not knitted or crocheted",
+    "63": "Other made up textile articles; sets; worn clothing and worn textile articles; rags",
+    "64": "Footwear, gaiters and the like; parts of such articles",
+    "65": "Headgear and parts thereof",
+    "66": "Umbrellas, sun umbrellas, walking-sticks, seat-sticks, whips, riding-crops and parts thereof",
+    "67": "Prepared feathers and down and articles made of feathers or of down; artificial flowers; articles of human hair",
+    "68": "Articles of stone, plaster, cement, asbestos, mica or similar materials",
+    "69": "Ceramic products",
+    "70": "Glass and glassware",
+    "71": "Natural or cultured pearls, precious or semi-precious stones, precious metals, metals clad with precious metal, and articles thereof; imitation jewellery; coin",
+    "72": "Iron and steel",
+    "73": "Articles of iron or steel",
+    "74": "Copper and articles thereof",
+    "75": "Nickel and articles thereof",
+    "76": "Aluminium and articles thereof",
+    "78": "Lead and articles thereof",
+    "79": "Zinc and articles thereof",
+    "80": "Tin and articles thereof",
+    "81": "Other base metals; cermets; articles thereof",
+    "82": "Tools, implements, cutlery, spoons and forks, of base metal; parts thereof of base metal",
+    "83": "Miscellaneous articles of base metal",
+    "84": "Nuclear reactors, boilers, machinery and mechanical appliances; parts thereof",
+    "85": "Electrical machinery and equipment and parts thereof; sound recorders and reproducers, television image and sound recorders and reproducers, and parts and accessories of such articles",
+    "86": "Railway or tramway locomotives, rolling-stock and parts thereof; railway or tramway track fixtures and fittings and parts thereof; mechanical, including electro-mechanical, traffic signalling  equipment of all kinds",
+    "87": "Vehicles other than railway or tramway rolling-stock, and parts and accessories thereof",
+    "88": "Aircraft, spacecraft, and parts thereof",
+    "89": "Ships, boats and floating structures",
+    "90": "Optical, photographic, cinematographic, measuring, checking, precision, medical or surgical instruments and apparatus; parts and accessories thereof",
+    "91": "Clocks and watches and parts thereof",
+    "92": "Musical instruments; parts and accessories for such",
+    "93": "Arms and ammunition; parts and accessoriesthereof",
+    "94": "Furniture; medical and surgical furniture; bedding, mattresses, mattress supports,cushions and similar stuffed furnishings; lamps and lighting fittings, not elsewhere specified; illuminated signs, illuminated name-plates and the like; prefabricated b",
+    "95": "Toys, games and sports requisites; parts and accessories thereof",
+    "96": "Miscellaneous manufactured articles",
+    "97": "Works of art, collectors' pieces and antiques",
+    "98": "Industrial Plant component parts",
+    "99": "Other products",
+    "01": "Live animals",
+    "02": "Meat and edible meat offal",
+    "03": "Fish and crustaceans, molluscs and other aquatic invertebrates",
+    "04": "Dairy produce; birds' eggs; natural honey; edible products of animal origin, not elsewhere specified or included",
+    "05": "Products of animal origin not elsewhere specified or included",
+    "06": "Live trees and other plants; bulbs, roots and the like; cut flowers and ornamental foliage",
+    "07": "Edible vegetables and certain roots and tubers",
+    "08": "Edible fruit and nuts; peel of citrus fruits or melons",
+    "09": "Coffee, tea, mate and spices"
+  },
+  "world": {
+    "2024-08": {
+      "imports": 51794091936,
+      "exports": 32351273365
+    },
+    "2024-09": {
+      "imports": 51335269154,
+      "exports": 33283686480
+    },
+    "2024-10": {
+      "imports": 65371530002,
+      "exports": 36134549462
+    },
+    "2024-11": {
+      "imports": 59448113731,
+      "exports": 40320154387
+    },
+    "2024-12": {
+      "imports": 52573647622,
+      "exports": 38393457154
+    },
+    "2025-01": {
+      "imports": 51783572692,
+      "exports": 45480307935
+    },
+    "2025-02": {
+      "imports": 56618162644,
+      "exports": 42399877541
+    },
+    "2025-03": {
+      "imports": 61402786379,
+      "exports": 41609884482
+    },
+    "2025-04": {
+      "imports": 58735475780,
+      "exports": 35123495245
+    },
+    "2025-05": {
+      "imports": 58802692540,
+      "exports": 33440650704
+    },
+    "2025-06": {
+      "imports": 62632186858,
+      "exports": 29059948542
+    },
+    "2025-07": {
+      "imports": 62948156643,
+      "exports": 36073829385
+    },
+    "2025-08": {
+      "imports": 52587842646,
+      "exports": 29122445760
+    },
+    "2025-09": {
+      "imports": 58008954220,
+      "exports": 33815581390
+    },
+    "2025-10": {
+      "imports": 64433337950,
+      "exports": 37473199644
+    },
+    "2025-11": {
+      "imports": 63987899978,
+      "exports": 33207165039
+    },
+    "2025-12": {
+      "imports": 71080728525,
+      "exports": 29452604272
+    },
+    "2026-01": {
+      "imports": 64016709371,
+      "exports": 32089269339
+    },
+    "2026-02": {
+      "imports": 63709765636,
+      "exports": 33424096046
+    },
+    "2026-03": {
+      "imports": 75523496282,
+      "exports": 36058659276
+    },
+    "2026-04": {
+      "imports": 63848822910,
+      "exports": 36480669790
+    },
+    "2026-05": {
+      "imports": 63987969947,
+      "exports": 39355792841
+    },
+    "2026-06": {
+      "imports": 64741891199,
+      "exports": 37679224421
+    },
+    "2026-07": {
+      "imports": 67705106120,
+      "exports": 37790737512
+    }
+  },
+  "coverage": {
+    "2024-08": {
+      "rows": 5149,
+      "kept": 70174819259,
+      "share": 0.834
+    },
+    "2024-09": {
+      "rows": 5144,
+      "kept": 72127325220,
+      "share": 0.8524
+    },
+    "2024-10": {
+      "rows": 5192,
+      "kept": 85532314372,
+      "share": 0.8426
+    },
+    "2024-11": {
+      "rows": 5203,
+      "kept": 83287000390,
+      "share": 0.8348
+    },
+    "2024-12": {
+      "rows": 5156,
+      "kept": 77164899644,
+      "share": 0.8483
+    },
+    "2025-01": {
+      "rows": 5127,
+      "kept": 84077183605,
+      "share": 0.8644
+    },
+    "2025-02": {
+      "rows": 5136,
+      "kept": 86018322151,
+      "share": 0.8687
+    },
+    "2025-03": {
+      "rows": 5167,
+      "kept": 88710058800,
+      "share": 0.8612
+    },
+    "2025-04": {
+      "rows": 5155,
+      "kept": 80152486085,
+      "share": 0.854
+    },
+    "2025-05": {
+      "rows": 5180,
+      "kept": 77573692950,
+      "share": 0.841
+    },
+    "2025-06": {
+      "rows": 5142,
+      "kept": 78266619962,
+      "share": 0.8536
+    },
+    "2025-07": {
+      "rows": 5173,
+      "kept": 83614890358,
+      "share": 0.8444
+    },
+    "2025-08": {
+      "rows": 5142,
+      "kept": 69322055195,
+      "share": 0.8484
+    },
+    "2025-09": {
+      "rows": 5166,
+      "kept": 77020815481,
+      "share": 0.8388
+    },
+    "2025-10": {
+      "rows": 5188,
+      "kept": 85487793847,
+      "share": 0.8389
+    },
+    "2025-11": {
+      "rows": 5174,
+      "kept": 82689200568,
+      "share": 0.8508
+    },
+    "2025-12": {
+      "rows": 5161,
+      "kept": 87276820146,
+      "share": 0.8681
+    },
+    "2026-01": {
+      "rows": 5117,
+      "kept": 84180301927,
+      "share": 0.8759
+    },
+    "2026-02": {
+      "rows": 5130,
+      "kept": 84602267900,
+      "share": 0.871
+    },
+    "2026-03": {
+      "rows": 5179,
+      "kept": 97775379527,
+      "share": 0.8763
+    },
+    "2026-04": {
+      "rows": 5181,
+      "kept": 86847275956,
+      "share": 0.8656
+    },
+    "2026-05": {
+      "rows": 5168,
+      "kept": 89301451198,
+      "share": 0.8641
+    },
+    "2026-06": {
+      "rows": 5182,
+      "kept": 88505531697,
+      "share": 0.8641
+    },
+    "2026-07": {
+      "rows": 5153,
+      "kept": 91636486317,
+      "share": 0.8686
+    }
+  },
+  "apiRowCounts": {
+    "2024-08": 15071,
+    "2024-09": 14923,
+    "2024-10": 15723,
+    "2024-11": 15490,
+    "2024-12": 15174,
+    "2025-01": 14735,
+    "2025-02": 15060,
+    "2025-03": 15391,
+    "2025-04": 15220,
+    "2025-05": 15330,
+    "2025-06": 15030,
+    "2025-07": 15424,
+    "2025-08": 15062,
+    "2025-09": 15131,
+    "2025-10": 15632,
+    "2025-11": 15456,
+    "2025-12": 15158,
+    "2026-01": 14680,
+    "2026-02": 15047,
+    "2026-03": 15244,
+    "2026-04": 15160,
+    "2026-05": 15211,
+    "2026-06": 15213,
+    "2026-07": 15299
+  }
+}

@@ -1,0 +1,67 @@
+name: Refresh the saved copy
+
+# The page reads only the saved copy in data/snapshot/, because the HMRC API
+# it comes from cannot be read from a browser on another web address. So the
+# copy should never be far behind the API. This takes a fresh one every night
+# and commits it when it has changed, then asks the publishing workflow to put
+# it live: a push made with the workflow's own token does not start other
+# workflows by itself.
+#
+# HMRC publishes a month about six weeks after it ends, so most nights nothing
+# changes and nothing is committed. The night after a publication, the new
+# month appears and the oldest drops out of the window.
+
+on:
+  schedule:
+    - cron: '23 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+# One refresh at a time. A run already under way is left to finish.
+concurrency:
+  group: snapshot
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the demo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # The builder runs only the demo's own source, so nothing is installed.
+      # It makes about thirty requests a second apart, well inside the API's
+      # limit of sixty a minute. A month that cannot be fetched fails the run
+      # and the copy already committed stays as it is.
+      - name: Take a fresh copy from the HMRC uktradeinfo API
+        run: node tools/build-snapshot.mjs
+
+      - name: Commit it when it has changed
+        id: commit
+        run: |
+          git add -A data/snapshot
+          if git diff --cached --quiet -- ':!data/snapshot/meta.json'; then
+            echo "The saved copy is unchanged."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            git checkout -- data/snapshot
+            exit 0
+          fi
+          git config user.name "Lattice Demos"
+          git config user.email "tony@demandflow.com"
+          git commit -m "Refresh the saved copy ($(date -u +%Y-%m-%d))"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Publish the demo
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main
