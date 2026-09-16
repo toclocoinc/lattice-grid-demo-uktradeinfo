@@ -31,7 +31,7 @@
 (function (root) {
   'use strict';
 
-  const { monthLabel, previousMonth, seriesKey } = root.TradeDemo;
+  const { monthLabel, previousMonth } = root.TradeDemo;
 
   const TITLE = 'UK goods trade, month by month';
 
@@ -305,7 +305,7 @@
    * @param {Function} options.createTabs the tabs module's factory
    * @param {Function} options.createDataRouter the data router module's factory
    * @param {object} options.meta the saved copy's `meta.json`
-   * @param {Map<string, object[]>} options.store the months loaded so far, rows by month
+   * @param {Map<string, object[]>} options.store the saved months, rows by month
    * @param {string} options.selected the month to open on
    * @returns {object} the pieces that were built, for a caller that wants them
    */
@@ -473,9 +473,11 @@
 
     /*
      * Every saved month, in a grid with no DOM. Only the fields the trend
-     * needs are declared, so the grid does no more work than that. Months
-     * are added as they arrive, by keyed diff.
+     * needs are declared, so the grid does no more work than that. The saved
+     * copy is one dataset, so it goes in as one load, oldest month first.
      */
+    const windowRows = [];
+    for (const month of [...store.keys()].sort()) windowRows.push(...store.get(month));
     const windowGrid = createHeadlessGrid({
       rowKey: 'id',
       columns: [
@@ -486,8 +488,8 @@
       ],
       rows: [],
     });
+    windowGrid.rows.load(windowRows);
     built.windowGrid = windowGrid;
-    for (const rows of store.values()) windowGrid.rows.apply({ add: rows });
 
     /*
      * The months added up by flow, derived from the window grid and
@@ -733,16 +735,14 @@
       return node;
     };
 
-    /* The month selector. Months the page has not read yet are listed but
-       cannot be chosen until they arrive. */
+    /* The month selector. A month the saved copy lists but could not be
+       read is shown, but cannot be chosen. */
     const monthSelect = el('select', 'month-select');
     monthSelect.setAttribute('aria-label', 'Month');
-    const monthOptions = new Map();
     for (const month of [...meta.months].sort().reverse()) {
       const option = el('option', null, monthLabel(month));
       option.value = month;
       option.disabled = !store.has(month);
-      monthOptions.set(month, option);
       monthSelect.append(option);
     }
     monthSelect.value = selected;
@@ -796,13 +796,11 @@
     /** Say what the reader is looking at, and how fresh it is. */
     const setFreshness = () => {
       const taken = new Date(meta.fetchedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-      const loaded = store.size;
       const share = meta.coverage && meta.coverage[built.selected] ? meta.coverage[built.selected].share : null;
       const coverage = share ? ` These ${partnerCount} partners carried ${(share * 100).toFixed(0)}% of UK goods trade by value that month.` : '';
-      const progress = loaded < meta.months.length ? ` ${loaded} of ${meta.months.length} months read so far.` : '';
       freshness.textContent =
         `${monthLabel(built.selected)}, from a copy of HMRC's figures taken on ${taken}; ` +
-        `the newest month HMRC has published is ${monthLabel(meta.newest)}.${coverage}${progress}`;
+        `the newest month HMRC has published is ${monthLabel(meta.newest)}.${coverage}`;
     };
     built.setFreshness = setFreshness;
 
@@ -825,25 +823,6 @@
       kpi.refresh();
       setFreshness();
       return true;
-    };
-
-    /**
-     * Take a month that arrived after the page was built.
-     *
-     * @param {string} month `'2025-03'`
-     * @param {object[]} rows its rows
-     */
-    built.addMonth = (month, rows) => {
-      store.set(month, rows);
-      const option = monthOptions.get(month);
-      if (option) option.disabled = false;
-      if (month === previousMonth(built.selected)) {
-        indexPrevious();
-        kpi.refresh();
-      }
-      /* Into the window by keyed diff; the derived grid and the trend follow. */
-      windowGrid.rows.apply({ add: rows });
-      setFreshness();
     };
 
     setFreshness();

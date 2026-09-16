@@ -411,22 +411,25 @@ try {
   );
   check(delivery.members.setLicence === 'function', 'delivery: setLicence is on the core global');
 
-  /* ---- the whole window arrives ---- */
+  /* ---- the whole window is on hand, from one load ---- */
 
-  await waitFor('window.__tradeDemo.complete === true', 60000, 'every saved month to be read');
   const loaded = await evaluate(`(() => {
     const d = window.__tradeDemo;
     return {
+      complete: d.complete,
       months: d.store.size,
       failed: d.timings.monthsFailed,
+      windowRows: d.windowGrid.rows.totalCount(),
       disabledOptions: [...d.monthSelect.options].filter((o) => o.disabled).length,
       options: d.monthSelect.options.length,
       timings: d.timings,
     };
   })()`);
-  console.log(`  months read: ${loaded.months} of ${meta.months.length}; timings ${JSON.stringify(loaded.timings)}`);
+  console.log(`  months read: ${loaded.months} of ${meta.months.length}; window ${loaded.windowRows} rows; timings ${JSON.stringify(loaded.timings)}`);
+  check(loaded.complete === true, 'saved copy: the page reports the whole copy read before it drew', `${loaded.complete}`);
   check(loaded.months === meta.months.length, 'saved copy: every saved month was read', `${loaded.months} of ${meta.months.length}`);
   check(loaded.failed === 0, 'saved copy: no saved month failed to read', `${loaded.failed}`);
+  check(loaded.windowRows === meta.rows, 'saved copy: the window grid holds every saved row from one load', `${loaded.windowRows} against ${meta.rows}`);
   check(loaded.options === meta.months.length && loaded.disabledOptions === 0, 'saved copy: the month selector offers every month', `${loaded.options} options, ${loaded.disabledOptions} disabled`);
 
   const snap = await evaluate(`(() => {
@@ -624,7 +627,6 @@ try {
   await call('Network.setBlockedURLs', { urls: [`*${API_HOST}*`] });
   requested.length = 0;
   await open(`${origin}/index.html`, 'default page, with the API blocked');
-  await waitFor('window.__tradeDemo.complete === true', 60000, 'every saved month to be read');
   const blocked = await evaluate(`(() => {
     const d = window.__tradeDemo;
     return {

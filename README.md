@@ -145,8 +145,10 @@ combined one by the tabs module (`from` and `where`), with a live row count
 on the tab before it has ever been opened.
 
 **A month selector.** Choosing a month puts that month's rows through the
-router as a keyed diff. The month is also in the address (`?month=2026-03`),
-so a view can be linked to.
+router as a keyed diff: the rows the two months share are updated in place,
+the rest are added or removed, and the tiles, the charts and the tab counts
+follow. The month is also in the address (`?month=2026-03`), so a view can
+be linked to.
 
 ## How the grid gets onto the page
 
@@ -251,11 +253,12 @@ That prints an address. Open it.
 Running a copy on your own machine needs no licence key. Publishing it on a
 web address does.
 
-The month on screen is on the page in well under a second. The other
-twenty-three months are read in behind it for the trend, and the readout
-under the title counts them in; on a 2026 laptop that takes about twenty
-seconds, almost all of it inside the grid adding each month to the window
-(see the last note under "Things worth knowing").
+The page reads the whole saved copy before it draws, four files at a time,
+and then loads it once: the month on screen goes through the router, and
+every month goes into the window grid with a single `rows.load`. On a 2026
+laptop the copy is read in well under a second and the page is built in
+about one more. The saved copy is one dataset, so it is loaded as one; the
+grid's keyed diff is for changes, and a saved copy has none.
 
 ## Files
 
@@ -309,11 +312,6 @@ changes. The GitHub Pages workflow runs it before every publish.
 - Since 2021, trade with the EU is measured from customs declarations, as
   non-EU trade always was. The two are added together here.
 - A partner's region is HMRC's own grouping, from the Country table.
-- The window grid that feeds the trend is filled a month at a time through
-  the grid's keyed diff. In the 1.62.0 release the cost of that grows with
-  the rows the grid already holds, which is why the trend takes longer to
-  fill than the table takes to draw. The page says how many months it has
-  read so far.
 
 ## Licence
 

@@ -1,6 +1,6 @@
 /**
- * The entry point: read the saved copy, hand the newest month to the
- * dashboard, then read the other months in behind it.
+ * The entry point: read the whole saved copy, then hand it to the dashboard
+ * opened on the newest month.
  *
  * There is one source of data, the saved copy in `data/snapshot/`. The HMRC
  * API it was taken from answers without the cross-origin header a browser
@@ -129,16 +129,45 @@
       }
       const lookups = { partners: meta.partners, chapters: meta.chapters };
 
-      /* The month to open on: the one asked for, if the copy holds it, else
-         the newest. It is read first and on its own, so the page is on screen
-         before the rest of the window has arrived. */
-      const first = wantedMonth && meta.months.includes(wantedMonth) ? wantedMonth : meta.newest;
-      update(`Reading ${first}...`, 0.2);
+      /*
+       * The whole saved copy, read before anything is drawn. It is one
+       * dataset, a few megabytes on disk, and the grid takes it in one load;
+       * feeding it in a month at a time would only make the same rows arrive
+       * as twenty-four separate changes. The files are read four at a time.
+       * A month that cannot be read is counted and said at the top rather
+       * than stopping the others.
+       */
+      const months = [...meta.months].sort().reverse();
       const store = new Map();
-      store.set(first, decodeMonth(await readSaved(`months/${first}.json`), lookups));
+      let failed = 0;
+      let done = 0;
+      const readOne = async (month) => {
+        try {
+          store.set(month, decodeMonth(await readSaved(`months/${month}.json`), lookups));
+        } catch (error) {
+          failed += 1;
+          console.warn(`[trade demo] the saved month ${month} could not be read:`, error);
+        }
+        done += 1;
+        update(`Reading the saved copy, ${done} of ${months.length} months...`, 0.1 + (0.7 * done) / months.length);
+      };
+      const queue = [...months];
+      const workers = [];
+      for (let i = 0; i < 4; i += 1) {
+        workers.push((async () => {
+          while (queue.length) await readOne(queue.shift());
+        })());
+      }
+      await Promise.all(workers);
+      if (!store.size) throw new Error('None of the saved months could be read.');
+      if (failed) meta.partial = failed;
+
+      /* The month to open on: the one asked for, if the copy holds it, else
+         the newest that was read. */
+      const first = wantedMonth && store.has(wantedMonth) ? wantedMonth : store.has(meta.newest) ? meta.newest : [...store.keys()].sort().pop();
 
       const fetched = performance.now();
-      update('Building the dashboard...', 0.4);
+      update('Building the dashboard...', 0.85);
 
       const built = buildDashboard({
         root: host,
@@ -152,57 +181,22 @@
         store,
         selected: first,
       });
-      const builtAt = performance.now();
-
-      /* Kept by reference, not copied: the flow tables are only created when
-         their tab is first opened, and a copy taken now would never see them. */
-      root.__tradeDemo = Object.assign(built, { ready: true, complete: false });
-
-      /* The rest of the window, newest first, a few at a time. A month that
-         cannot be read is counted and said at the top rather than stopping
-         the others. */
-      const remaining = [...meta.months].sort().reverse().filter((month) => month !== first);
-      let failed = 0;
-      const readOne = async (month) => {
-        try {
-          const rows = decodeMonth(await readSaved(`months/${month}.json`), lookups);
-          built.addMonth(month, rows);
-        } catch (error) {
-          failed += 1;
-          console.warn(`[trade demo] the saved month ${month} could not be read:`, error);
-        }
-      };
-      const queue = [...remaining];
-      const workers = [];
-      for (let i = 0; i < 4; i += 1) {
-        workers.push((async () => {
-          while (queue.length) await readOne(queue.shift());
-        })());
-      }
-      await Promise.all(workers);
-      if (failed) {
-        meta.partial = failed;
-        const heading = host.querySelector('.head-text');
-        if (heading) {
-          const notice = document.createElement('p');
-          notice.className = 'notice';
-          notice.textContent = `${failed} of the saved months could not be read, so the trend and the month list are incomplete.`;
-          heading.append(notice);
-        }
-      }
 
       const finished = performance.now();
-      built.complete = true;
       built.timings = {
         month: first,
         monthsLoaded: store.size,
         monthsFailed: failed,
         rows: built.allGrid ? built.allGrid.rows.count() : 0,
-        firstMonthMs: Math.round(fetched - started),
-        buildMs: Math.round(builtAt - fetched),
-        restMs: Math.round(finished - builtAt),
+        windowRows: built.windowGrid ? built.windowGrid.rows.totalCount() : 0,
+        readMs: Math.round(fetched - started),
+        buildMs: Math.round(finished - fetched),
         totalMs: Math.round(finished - started),
       };
+
+      /* Kept by reference, not copied: the flow tables are only created when
+         their tab is first opened, and a copy taken now would never see them. */
+      root.__tradeDemo = Object.assign(built, { ready: true, complete: true });
       console.log('[trade demo] ready', built.timings);
     } catch (error) {
       root.__tradeDemo = { ready: false, error: String((error && error.message) || error) };
