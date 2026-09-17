@@ -219,8 +219,6 @@ Choose the ESM package instead when:
   tree-shakes, the modules that extend the core share the one copy the page
   already imported, and you get TypeScript declarations wired through
   `package.json` with no configuration.
-- **You need the eighteen extra chart types.** They ship as ESM only, each
-  self-registering onto the charts module. There is no UMD build for them.
 - **You want everything offline, including the library.** An ESM edition can
   install the grid into `node_modules` and serve it from there. This edition
   needs to reach jsDelivr for the library even though its data is on disk.
