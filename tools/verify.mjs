@@ -43,7 +43,7 @@ const shotIndex = args.indexOf('--shots');
 const shotDir = shotIndex >= 0 ? resolve(args[shotIndex + 1]) : null;
 
 /** The release every library tag must name, and the globals each file leaves. */
-const GRID_VERSION = '1.62.0';
+const GRID_VERSION = '1.63.0';
 const CDN_BASE = `https://cdn.jsdelivr.net/npm/@toclocoinc/lattice-grid@${GRID_VERSION}/`;
 const LIBRARY_TAGS = [
   { file: 'lattice-grid.min.js', global: 'LatticeGrid', member: 'createGrid' },
