@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-09-16T10:03:17.525Z",
-  "fetchedAtMs": 1789552997525,
-  "seconds": 93.1,
+  "fetchedAt": "2026-10-15T09:15:27.780Z",
+  "fetchedAtMs": 1792055727780,
+  "seconds": 124.1,
   "requests": 29,
   "source": "HM Revenue & Customs, uktradeinfo",
   "sourceUrl": "https://www.uktradeinfo.com/",
@@ -9,7 +9,6 @@
   "licence": "Open Government Licence v3.0",
   "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
   "months": [
-    "2024-08",
     "2024-09",
     "2024-10",
     "2024-11",
@@ -32,220 +31,221 @@
     "2026-04",
     "2026-05",
     "2026-06",
-    "2026-07"
+    "2026-07",
+    "2026-08"
   ],
-  "newest": "2026-07",
-  "rows": 123865,
+  "newest": "2026-08",
+  "rows": 125373,
   "partners": [
     {
       "id": 400,
       "name": "United States",
       "code": "US",
       "region": "North America",
-      "total": 277264345964
+      "total": 277845398854
     },
     {
       "id": 4,
       "name": "Germany",
       "code": "DE",
       "region": "European Union",
-      "total": 219982709604
+      "total": 220511016315
     },
     {
       "id": 720,
       "name": "China",
       "code": "CN",
       "region": "Asia and Oceania",
-      "total": 202550138302
+      "total": 205279350781
     },
     {
       "id": 3,
       "name": "Netherlands",
       "code": "NL",
       "region": "European Union",
-      "total": 152773193175
+      "total": 153233675115
     },
     {
       "id": 39,
       "name": "Switzerland",
       "code": "CH",
       "region": "Western Europe exc EU",
-      "total": 127475678771
+      "total": 135785263718
     },
     {
       "id": 1,
       "name": "France",
       "code": "FR",
       "region": "European Union",
-      "total": 119716202064
+      "total": 119696695797
     },
     {
       "id": 17,
       "name": "Belgium",
       "code": "BE",
       "region": "European Union",
-      "total": 92986505430
+      "total": 93234760616
     },
     {
       "id": 7,
       "name": "Ireland",
       "code": "IE",
       "region": "European Union",
-      "total": 86796309973
+      "total": 87308606080
     },
     {
       "id": 404,
       "name": "Canada",
       "code": "CA",
       "region": "North America",
-      "total": 73908750297
+      "total": 74789300137
     },
     {
       "id": 11,
       "name": "Spain",
       "code": "ES",
       "region": "European Union",
-      "total": 66548481788
+      "total": 66878654241
     },
     {
       "id": 5,
       "name": "Italy",
       "code": "IT",
       "region": "European Union",
-      "total": 64047744762
+      "total": 63991842807
     },
     {
       "id": 28,
       "name": "Norway",
       "code": "NO",
       "region": "Western Europe exc EU",
-      "total": 54996498683
+      "total": 55089020685
     },
     {
       "id": 740,
       "name": "Hong Kong",
       "code": "HK",
       "region": "Asia and Oceania",
-      "total": 48697059855
+      "total": 49040485914
     },
     {
       "id": 60,
       "name": "Poland",
       "code": "PL",
       "region": "European Union",
-      "total": 44304010460
+      "total": 44508058024
     },
     {
       "id": 52,
       "name": "Turkey",
       "code": "TR",
       "region": "Western Europe exc EU",
-      "total": 38713238235
+      "total": 38511127505
     },
     {
       "id": 664,
       "name": "India",
       "code": "IN",
       "region": "Asia and Oceania",
-      "total": 37316816003
+      "total": 36782090657
     },
     {
       "id": 732,
       "name": "Japan",
       "code": "JP",
       "region": "Asia and Oceania",
-      "total": 32464206612
+      "total": 32456142935
     },
     {
       "id": 388,
       "name": "South Africa",
       "code": "ZA",
       "region": "Sub-Saharan Africa",
-      "total": 30397784752
-    },
-    {
-      "id": 30,
-      "name": "Sweden",
-      "code": "SE",
-      "region": "European Union",
-      "total": 25735568352
-    },
-    {
-      "id": 647,
-      "name": "UAE",
-      "code": "AE",
-      "region": "Middle East and N Africa",
-      "total": 25035211934
+      "total": 31201743006
     },
     {
       "id": 706,
       "name": "Singapore",
       "code": "SG",
       "region": "Asia and Oceania",
-      "total": 24772200525
+      "total": 26489404937
+    },
+    {
+      "id": 30,
+      "name": "Sweden",
+      "code": "SE",
+      "region": "European Union",
+      "total": 25722917007
+    },
+    {
+      "id": 647,
+      "name": "UAE",
+      "code": "AE",
+      "region": "Middle East and N Africa",
+      "total": 24935973314
     },
     {
       "id": 800,
       "name": "Australia",
       "code": "AU",
       "region": "Asia and Oceania",
-      "total": 24483826705
+      "total": 24865596234
     },
     {
       "id": 728,
       "name": "South Korea",
       "code": "KR",
       "region": "Asia and Oceania",
-      "total": 19100559465
+      "total": 19152138899
     },
     {
       "id": 8,
       "name": "Denmark",
       "code": "DK",
       "region": "European Union",
-      "total": 18626060381
+      "total": 18785463349
     },
     {
       "id": 690,
       "name": "Vietnam",
       "code": "VN",
       "region": "Asia and Oceania",
-      "total": 16886133359
+      "total": 17174222043
     },
     {
       "id": 61,
       "name": "Czechia",
       "code": "CZ",
       "region": "European Union",
-      "total": 15067371656
+      "total": 15114703349
     },
     {
       "id": 508,
       "name": "Brazil",
       "code": "BR",
       "region": "Latin America and Caribbean",
-      "total": 12988345804
+      "total": 13089687735
     },
     {
       "id": 632,
       "name": "Saudi Arabia",
       "code": "SA",
       "region": "Middle East and N Africa",
-      "total": 12951483347
+      "total": 12955158593
     },
     {
       "id": 38,
       "name": "Austria",
       "code": "AT",
       "region": "European Union",
-      "total": 12863294592
+      "total": 12894810740
     },
     {
-      "id": 81,
-      "name": "Uzbekistan",
-      "code": "UZ",
-      "region": "Eastern Europe exc EU",
-      "total": 11895261705
+      "id": 644,
+      "name": "Qatar",
+      "code": "QA",
+      "region": "Middle East and N Africa",
+      "total": 11768165260
     }
   ],
   "chapters": {
@@ -349,10 +349,6 @@
     "09": "Coffee, tea, mate and spices"
   },
   "world": {
-    "2024-08": {
-      "imports": 51794091936,
-      "exports": 32351273365
-    },
     "2024-09": {
       "imports": 51335269154,
       "exports": 33283686480
@@ -418,158 +414,161 @@
       "exports": 29452604272
     },
     "2026-01": {
-      "imports": 64016709371,
-      "exports": 32089269339
+      "imports": 64018273247,
+      "exports": 32091570894
     },
     "2026-02": {
-      "imports": 63709765636,
-      "exports": 33424096046
+      "imports": 63710611712,
+      "exports": 33425298482
     },
     "2026-03": {
-      "imports": 75523496282,
-      "exports": 36058659276
+      "imports": 75524256773,
+      "exports": 36059585601
     },
     "2026-04": {
-      "imports": 63848822910,
-      "exports": 36480669790
+      "imports": 63847703835,
+      "exports": 36482207008
     },
     "2026-05": {
-      "imports": 63987969947,
-      "exports": 39355792841
+      "imports": 63984365046,
+      "exports": 39349218523
     },
     "2026-06": {
-      "imports": 64741891199,
-      "exports": 37679224421
+      "imports": 64754424994,
+      "exports": 37683936893
     },
     "2026-07": {
-      "imports": 67705106120,
-      "exports": 37790737512
+      "imports": 67716085727,
+      "exports": 37681296639
+    },
+    "2026-08": {
+      "imports": 68326120149,
+      "exports": 31701572808
     }
   },
   "coverage": {
-    "2024-08": {
-      "rows": 5149,
-      "kept": 70174819259,
-      "share": 0.834
-    },
     "2024-09": {
-      "rows": 5144,
-      "kept": 72127325220,
-      "share": 0.8524
+      "rows": 5219,
+      "kept": 71672654013,
+      "share": 0.847
     },
     "2024-10": {
-      "rows": 5192,
-      "kept": 85532314372,
-      "share": 0.8426
-    },
-    "2024-11": {
-      "rows": 5203,
-      "kept": 83287000390,
-      "share": 0.8348
-    },
-    "2024-12": {
-      "rows": 5156,
-      "kept": 77164899644,
-      "share": 0.8483
-    },
-    "2025-01": {
-      "rows": 5127,
-      "kept": 84077183605,
-      "share": 0.8644
-    },
-    "2025-02": {
-      "rows": 5136,
-      "kept": 86018322151,
-      "share": 0.8687
-    },
-    "2025-03": {
-      "rows": 5167,
-      "kept": 88710058800,
-      "share": 0.8612
-    },
-    "2025-04": {
-      "rows": 5155,
-      "kept": 80152486085,
-      "share": 0.854
-    },
-    "2025-05": {
-      "rows": 5180,
-      "kept": 77573692950,
-      "share": 0.841
-    },
-    "2025-06": {
-      "rows": 5142,
-      "kept": 78266619962,
-      "share": 0.8536
-    },
-    "2025-07": {
-      "rows": 5173,
-      "kept": 83614890358,
-      "share": 0.8444
-    },
-    "2025-08": {
-      "rows": 5142,
-      "kept": 69322055195,
-      "share": 0.8484
-    },
-    "2025-09": {
-      "rows": 5166,
-      "kept": 77020815481,
-      "share": 0.8388
-    },
-    "2025-10": {
-      "rows": 5188,
-      "kept": 85487793847,
+      "rows": 5263,
+      "kept": 85152692592,
       "share": 0.8389
     },
+    "2024-11": {
+      "rows": 5267,
+      "kept": 83743214200,
+      "share": 0.8394
+    },
+    "2024-12": {
+      "rows": 5226,
+      "kept": 76814057734,
+      "share": 0.8444
+    },
+    "2025-01": {
+      "rows": 5199,
+      "kept": 84443277370,
+      "share": 0.8682
+    },
+    "2025-02": {
+      "rows": 5212,
+      "kept": 85060330780,
+      "share": 0.859
+    },
+    "2025-03": {
+      "rows": 5236,
+      "kept": 87560349481,
+      "share": 0.85
+    },
+    "2025-04": {
+      "rows": 5211,
+      "kept": 78879220859,
+      "share": 0.8404
+    },
+    "2025-05": {
+      "rows": 5250,
+      "kept": 77766528793,
+      "share": 0.8431
+    },
+    "2025-06": {
+      "rows": 5201,
+      "kept": 78498880706,
+      "share": 0.8561
+    },
+    "2025-07": {
+      "rows": 5235,
+      "kept": 83864099153,
+      "share": 0.8469
+    },
+    "2025-08": {
+      "rows": 5205,
+      "kept": 69479472571,
+      "share": 0.8503
+    },
+    "2025-09": {
+      "rows": 5239,
+      "kept": 77886806644,
+      "share": 0.8482
+    },
+    "2025-10": {
+      "rows": 5246,
+      "kept": 87486888838,
+      "share": 0.8585
+    },
     "2025-11": {
-      "rows": 5174,
-      "kept": 82689200568,
-      "share": 0.8508
+      "rows": 5241,
+      "kept": 83072349022,
+      "share": 0.8547
     },
     "2025-12": {
-      "rows": 5161,
-      "kept": 87276820146,
-      "share": 0.8681
+      "rows": 5219,
+      "kept": 87551821941,
+      "share": 0.8709
     },
     "2026-01": {
-      "rows": 5117,
-      "kept": 84180301927,
-      "share": 0.8759
+      "rows": 5187,
+      "kept": 84464312594,
+      "share": 0.8788
     },
     "2026-02": {
-      "rows": 5130,
-      "kept": 84602267900,
-      "share": 0.871
+      "rows": 5198,
+      "kept": 84869651520,
+      "share": 0.8737
     },
     "2026-03": {
-      "rows": 5179,
-      "kept": 97775379527,
-      "share": 0.8763
+      "rows": 5220,
+      "kept": 98075282489,
+      "share": 0.8789
     },
     "2026-04": {
-      "rows": 5181,
-      "kept": 86847275956,
-      "share": 0.8656
+      "rows": 5241,
+      "kept": 85999491983,
+      "share": 0.8572
     },
     "2026-05": {
-      "rows": 5168,
-      "kept": 89301451198,
-      "share": 0.8641
+      "rows": 5208,
+      "kept": 89495572300,
+      "share": 0.8661
     },
     "2026-06": {
-      "rows": 5182,
-      "kept": 88505531697,
-      "share": 0.8641
+      "rows": 5230,
+      "kept": 88703713840,
+      "share": 0.8659
     },
     "2026-07": {
-      "rows": 5153,
-      "kept": 91636486317,
-      "share": 0.8686
+      "rows": 5210,
+      "kept": 90887519108,
+      "share": 0.8623
+    },
+    "2026-08": {
+      "rows": 5210,
+      "kept": 87663286116,
+      "share": 0.8764
     }
   },
   "apiRowCounts": {
-    "2024-08": 15071,
     "2024-09": 14923,
     "2024-10": 15723,
     "2024-11": 15490,
@@ -592,6 +591,7 @@
     "2026-04": 15160,
     "2026-05": 15211,
     "2026-06": 15213,
-    "2026-07": 15299
+    "2026-07": 15299,
+    "2026-08": 15048
   }
 }
