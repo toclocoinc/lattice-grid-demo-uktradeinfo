@@ -43,8 +43,9 @@ const shotIndex = args.indexOf('--shots');
 const shotDir = shotIndex >= 0 ? resolve(args[shotIndex + 1]) : null;
 
 /** The release every library tag must name, and the globals each file leaves. */
-const GRID_VERSION = '1.111.5';
+const GRID_VERSION = '1.123.3';
 const CDN_BASE = `https://cdn.latticegrid.dev/lattice-grid@${GRID_VERSION}/`;
+const STAMP = '?v=20261116a';
 const LIBRARY_TAGS = [
   { file: 'lattice-grid.min.js', global: 'LatticeGrid', member: 'createGrid' },
   { file: 'modules/charts.min.js', global: 'LatticeGrid', member: 'createChart' },
@@ -399,12 +400,12 @@ try {
     `${delivery.librarySrcs.length}`,
   );
   for (const tag of LIBRARY_TAGS) {
-    const wanted = `${CDN_BASE}${tag.file}`;
+    const wanted = `${CDN_BASE}${tag.file}${STAMP}`;
     check(delivery.librarySrcs.includes(wanted), `delivery: ${tag.file} is loaded from the pinned ${GRID_VERSION} release`, wanted);
     check(delivery.members[tag.member] === 'function', `delivery: ${tag.file} left ${tag.global}.${tag.member} behind`, delivery.members[tag.member]);
   }
   check(
-    delivery.stylesheetSrc === `${CDN_BASE}lattice-grid.min.css`,
+    delivery.stylesheetSrc === `${CDN_BASE}lattice-grid.min.css${STAMP}`,
     `delivery: the stylesheet is loaded from the pinned ${GRID_VERSION} release`,
     delivery.stylesheetSrc,
   );

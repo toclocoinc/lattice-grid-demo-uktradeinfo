@@ -116,7 +116,7 @@
             field: 'chapterName',
             title: 'Commodities',
             filter: { type: 'text' },
-            layout: { width: 320 },
+            layout: { width: 210 },
           },
         ],
       },
@@ -135,7 +135,7 @@
             field: 'region',
             title: 'Region',
             filter: { type: 'set' },
-            layout: { width: 170 },
+            layout: { width: 160 },
           },
           {
             id: 'regionShort',
@@ -172,7 +172,7 @@
                also decides the order of the categories in the charts: a chart
                lays them out in the order the table walks its rows. */
             sort: { direction: 'desc' },
-            layout: { width: 150 },
+            layout: { width: 140 },
           },
           {
             id: 'mass',
@@ -183,7 +183,7 @@
             filter: { type: 'number' },
             total: 'sum',
             groupTotal: 'sum',
-            layout: { width: 150 },
+            layout: { width: 140 },
           },
           {
             ...money,
@@ -193,7 +193,7 @@
             /* Exports count for, imports against: this column's total over any
                set of rows is the trade balance for that set, so a group
                subtotal by partner is the balance with that partner. */
-            layout: { width: 150 },
+            layout: { width: 140 },
           },
           /* The two fields below are for the tiles and the charts rather than
              the reader, so they start out of the way. */
