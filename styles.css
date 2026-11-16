@@ -307,3 +307,54 @@ body {
 .foot a {
   color: var(--accent);
 }
+
+/* Phones: the page scrolls instead of filling the screen, the tiles and
+   charts stack in fewer columns, and the table gets a height of its own. */
+@media (max-width: 720px) {
+  html,
+  body {
+    height: auto;
+  }
+
+  #app {
+    height: auto;
+    padding: 14px 12px 10px;
+  }
+
+  .head-note {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .freshness {
+    white-space: normal;
+  }
+
+  .kpi-strip {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .chart-wrap {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 230px;
+    height: auto;
+  }
+
+  .tabs-host {
+    flex: 0 0 auto;
+    height: 560px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-wrap {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* On a phone each figure gets a full row so twelve-digit values are not cut. */
+@media (max-width: 480px) {
+  .kpi-panel.lat-kpi {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
